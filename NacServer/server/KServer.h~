@@ -1,0 +1,22 @@
+#ifndef KSERVER_H
+#define KSERVER_H
+
+#include "KServerSocket.h"
+#include "common/KWhiteList.h"
+
+using namespace std;
+
+class KServer
+{
+public:
+    KServer();
+    void startServer(void *);
+    void stopServer();
+
+private:
+    void InitWhitelist();
+    KWhiteList g_kwlWhitelist;
+    KServerSocket kssSocket;
+};
+
+#endif // KSERVER_H
